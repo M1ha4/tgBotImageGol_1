@@ -30,41 +30,50 @@ def lev(message):
     bot.send_message(message.chat.id, "Лев")
     photo_lev = open('lev.jpg', 'rb')
     bot.send_photo(message.chat.id, photo_lev)
-    voice = ""
+    voice = open("lev.ogg", 'rb')
     bot.send_voice(message.chat.id, voice)
 
+
 @bot.message_handler(commands=['volk'])
-def lev(message):
-    bot.send_message(message.chat.id, "Лев")
-    bot.send_sticker(message.chat.id, 'CAACAgIAAxkBAAEEYI5iTCYHKPkx6v2rIbJfAAFZfoxKlPwAArkXAAK-klBJwmt_557uyEIjBA')
-    voice = open('https://zvukogram.com/zvuk/29599/', 'rb')
+def volk(message):
+    bot.send_message(message.chat.id, "Волк")
+    photo_volk = open('volk.jpg', 'rb')
+    bot.send_photo(message.chat.id, photo_volk)
+    voice = open("volk.ogg", 'rb')
     bot.send_voice(message.chat.id, voice)
 
 @bot.message_handler(commands=['sobaka'])
-def lev(message):
-    bot.send_message(message.chat.id, "Лев")
-    bot.send_sticker(message.chat.id, 'CAACAgIAAxkBAAEEYI5iTCYHKPkx6v2rIbJfAAFZfoxKlPwAArkXAAK-klBJwmt_557uyEIjBA')
-    voice = open('https://zvukogram.com/zvuk/29599/', 'rb')
+def sobaka(message):
+    bot.send_message(message.chat.id, "Собака")
+    photo_sobaka = open('sobaka.jpg', 'rb')
+    bot.send_photo(message.chat.id, photo_sobaka)
+    voice = open("sobaka.ogg", 'rb')
     bot.send_voice(message.chat.id, voice)
 
 @bot.message_handler(commands=['koshka'])
-def lev(message):
-    bot.send_message(message.chat.id, "Лев")
-    bot.send_sticker(message.chat.id, 'CAACAgIAAxkBAAEEYI5iTCYHKPkx6v2rIbJfAAFZfoxKlPwAArkXAAK-klBJwmt_557uyEIjBA')
-    voice = open('https://zvukogram.com/zvuk/29599/', 'rb')
+def koshka(message):
+    bot.send_message(message.chat.id, "Кошка")
+    photo_koshka = open('koshka.jpg', 'rb')
+    bot.send_photo(message.chat.id, photo_koshka)
+    voice = open("koshka.ogg", 'rb')
     bot.send_voice(message.chat.id, voice)
 
 @bot.message_handler(commands=['osel'])
-def lev(message):
-    bot.send_message(message.chat.id, "Лев")
-    bot.send_sticker(message.chat.id, 'CAACAgIAAxkBAAEEYI5iTCYHKPkx6v2rIbJfAAFZfoxKlPwAArkXAAK-klBJwmt_557uyEIjBA')
-    voice = open('https://zvukogram.com/zvuk/29599/', 'rb')
+def osel(message):
+    bot.send_message(message.chat.id, "Осел")
+    photo_osel = open('osel.jpg', 'rb')
+    bot.send_photo(message.chat.id, photo_osel)
+    voice = open("osel.ogg", 'rb')
     bot.send_voice(message.chat.id, voice)
 
 @bot.message_handler(commands=['lagushka'])
-def lev(message):
-    bot.send_message(message.chat.id, "Лев")
-    bot.send_sticker(message.chat.id, 'CAACAgIAAxkBAAEEYI5iTCYHKPkx6v2rIbJfAAFZfoxKlPwAArkXAAK-klBJwmt_557uyEIjBA')
-    voice = open('https://zvukogram.com/zvuk/29599/', 'rb')
+def lagushka(message):
+    bot.send_message(message.chat.id, "Лягушка")
+    photo_lagushka = open('lagushka.jpg', 'rb')
+    bot.send_photo(message.chat.id, photo_lagushka)
+    voice = open("lagushka.ogg", 'rb')
     bot.send_voice(message.chat.id, voice)
+
+
+
 bot.infinity_polling()
