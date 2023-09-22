@@ -4,25 +4,35 @@ bot=telebot.TeleBot('6510543135:AAEdIWHEkR_ncIOQ-bvVhOKTJ3sHF4PCOsk')
 
 @bot.message_handler(commands=['start'])
 def start(message):
+    markup = types.ReplyKeyboardMarkup()
+    lev = types.InlineKeyboardButton(text="/lev")
+    volk = types.InlineKeyboardButton(text="/volk", callback_data='yes')
+    sobaka = types.InlineKeyboardButton(text="/sobaka", callback_data='yes')
+    koshka = types.InlineKeyboardButton(text="/koshka", callback_data='yes')
+    osel = types.InlineKeyboardButton(text="/osel", callback_data='yes')
+    lagushka = types.InlineKeyboardButton(text="/lagushka", callback_data='yes')
+    markup.add(lev, volk, sobaka, koshka, osel, lagushka)
     mess=f"Привет, {message.from_user.first_name}.\nЭтот бот отправляет фотографии животных и звуки, которые они издают.\n" \
+         f"Получить ссылку на репозиторий:\n" \
+         f"/repos\n"\
          f"Выбери животное:\n" \
          f"1)/lev\n" \
          f"2)/volk\n" \
          f"3)/sobaka\n" \
          f"4)/koshka\n" \
          f"5)/osel\n" \
-         f"6)/lagushka"
+         f"6)/lagushka"\
 
-    bot.send_message(message.chat.id, mess, parse_mode='html')
 
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-    lev = types.KeyboardButton("/Лев")
-    volk = types.KeyboardButton("/Волк")
-    sobaka = types.KeyboardButton("/Собака")
-    koshka = types.KeyboardButton("/Кошка")
-    osel = types.KeyboardButton("/Осел")
-    lagushka = types.KeyboardButton("/Лягушка")
-    markup.add(lev, volk, sobaka, koshka, osel, lagushka)
+    bot.send_message(message.chat.id, mess, parse_mode='html', reply_markup=markup)
+
+
+
+
+
+@bot.message_handler(commands=['repos'])
+def repos(message):
+    bot.send_message(message.chat.id, "https://github.com/M1ha4/tgBotImageGol_1")
 
 
 @bot.message_handler(commands=['lev'])
